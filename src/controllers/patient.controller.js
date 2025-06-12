@@ -11,7 +11,7 @@ export const createPatient = async (req, res, next) => {
 
 export const getAllPatients = async (req, res, next) => {
   try {
-    const patients = await Patient.findAll({ where: { userId: req.userId } });
+    const patients = await Patient.findAll();
     res.json(patients);
   } catch (err) {
     next(err);
